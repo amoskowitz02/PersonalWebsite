@@ -70,6 +70,24 @@ html {
   animation: subtlePulse 3s ease-in-out infinite;
 }
 
+/* Skills marquee */
+@keyframes marquee-fwd {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(calc(-100% / 6), 0, 0); }
+}
+@keyframes marquee-rev {
+  from { transform: translate3d(calc(-100% / 6), 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+.animate-marquee {
+  animation: marquee-fwd var(--marquee-dur, 20s) linear infinite;
+  will-change: transform;
+}
+.animate-marquee-rev {
+  animation: marquee-rev var(--marquee-dur, 20s) linear infinite;
+  will-change: transform;
+}
+
 /* Floating glow orbs for background */
 @keyframes floatOrb1 {
   0%, 100% { transform: translate(0, 0) scale(1); }

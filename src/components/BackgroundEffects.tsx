@@ -98,15 +98,6 @@ export default function BackgroundEffects() {
       <div className="bg-orb-3 absolute top-[70%] left-[30%] w-[600px] h-[600px] rounded-full bg-purple-800/25 blur-[140px]" />
       <div className="bg-orb-1 absolute top-[85%] right-[20%] w-[350px] h-[350px] rounded-full bg-violet-900/20 blur-[90px]" />
 
-      {/* Subtle grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(168, 85, 247, 0.4) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(168, 85, 247, 0.4) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
 
       {/* Floating sparkle particles */}
       <Particles />

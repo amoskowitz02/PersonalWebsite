@@ -1,7 +1,10 @@
 "use client";
 
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect } from "react";
 import { skillCategories } from "@/data/skills";
+
+const NUM_COPIES = 6;
+const SPEED = 80; // px/s
 
 function MarqueeRow({
   skills,
@@ -10,62 +13,29 @@ function MarqueeRow({
   skills: string[];
   reverse?: boolean;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const animRef = useRef<number | null>(null);
-  const posRef = useRef<number | null>(null);
-  const initializedRef = useRef(false);
-
-  const speed = 0.5; // pixels per frame (~30px/s at 60fps)
-
-  const animate = useCallback(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const children = container.children;
-    if (children.length === 0) return;
-
-    // On first frame, if reversed, pre-scroll so content is buffered off the left edge
-    if (!initializedRef.current) {
-      initializedRef.current = true;
-      if (reverse) {
-        // Start scrolled so ~4 items worth of content is off-screen to the left
-        let offset = 0;
-        for (let i = 0; i < Math.min(4, children.length); i++) {
-          offset += (children[i] as HTMLElement).offsetWidth + 16;
-        }
-        posRef.current = offset;
-      } else {
-        posRef.current = 0;
-      }
-    }
-
-    posRef.current! += reverse ? -speed : speed;
-
-    const first = children[0] as HTMLElement;
-    const firstWidth = first.offsetWidth + 16; // include gap
-
-    if (!reverse && posRef.current! >= firstWidth) {
-      container.appendChild(first);
-      posRef.current! -= firstWidth;
-    } else if (reverse && posRef.current! <= 0) {
-      const last = children[children.length - 1] as HTMLElement;
-      container.insertBefore(last, children[0]);
-      posRef.current! += last.offsetWidth + 16;
-    }
-
-    container.style.transform = `translateX(${-posRef.current!}px)`;
-    animRef.current = requestAnimationFrame(animate);
-  }, [reverse]);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    animRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animRef.current) cancelAnimationFrame(animRef.current);
-    };
-  }, [animate]);
+    const track = trackRef.current;
+    if (!track) return;
 
-  // Repeat skills enough times to fill the screen with plenty of buffer
-  const repeated = Array.from({ length: 8 }, () => skills).flat();
+    let rafId: number;
+
+    const setDuration = () => {
+      const firstCopy = track.children[0] as HTMLElement;
+      if (!firstCopy || firstCopy.offsetWidth === 0) {
+        rafId = requestAnimationFrame(setDuration);
+        return;
+      }
+      const marginRight = parseFloat(getComputedStyle(firstCopy).marginRight) || 16;
+      const oneWidth = firstCopy.offsetWidth + marginRight;
+      track.style.setProperty("--marquee-dur", `${(oneWidth / SPEED).toFixed(2)}s`);
+    };
+
+    rafId = requestAnimationFrame(setDuration);
+    return () => cancelAnimationFrame(rafId);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
@@ -75,19 +45,22 @@ function MarqueeRow({
         WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
       }}
     >
-
       <div
-        ref={containerRef}
-        className="flex gap-4"
-        style={{ willChange: "transform" }}
+        ref={trackRef}
+        className={`w-max flex ${reverse ? "animate-marquee-rev" : "animate-marquee"}`}
       >
-        {repeated.map((skill, i) => (
-          <span
-            key={`${skill}-${i}`}
-            className="inline-flex items-center px-4 py-2 rounded-lg bg-surface border border-border text-sm text-zinc-300 whitespace-nowrap hover:border-purple-500/50 hover:text-purple-300 transition-colors shrink-0"
-          >
-            {skill}
-          </span>
+        {Array.from({ length: NUM_COPIES }).map((_, copyIdx) => (
+          <div key={copyIdx} className="flex gap-4 mr-4" style={{ willChange: "transform" }}>
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-surface border border-border text-sm text-zinc-300 whitespace-nowrap hover:border-purple-500/50 hover:text-purple-300 transition-colors shrink-0"
+                style={{ willChange: "transform" }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         ))}
       </div>
     </div>

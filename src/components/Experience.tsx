@@ -35,13 +35,6 @@ export default function Experience() {
                     <h3 className="text-lg font-semibold text-zinc-100">
                       {exp.role}
                     </h3>
-                    <span className="text-xs px-2 py-1 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 whitespace-nowrap ml-3">
-                      {exp.type === "internship"
-                        ? "Intern"
-                        : exp.type === "part-time"
-                        ? "Part-time"
-                        : "Full-time"}
-                    </span>
                   </div>
 
                   <p className="text-purple-400 font-medium text-sm">
