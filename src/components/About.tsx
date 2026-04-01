@@ -14,7 +14,7 @@ export default function About() {
           {/* Profile photo */}
           <div className="flex justify-center md:justify-start">
             <Image
-              src="/images/profile-v10.png"
+              src="/images/profile.png"
               alt="Adam Moskowitz"
               width={240}
               height={240}
