@@ -1,27 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  tags: string[];
-}
-
-// Placeholder blog posts — replace with real content or a CMS later
-const posts: BlogPost[] = [
-  {
-    slug: "building-rag-pipeline-at-scale",
-    title: "Building a RAG Pipeline at Scale: Lessons from 100K+ Embeddings",
-    date: "Coming Soon",
-    excerpt:
-      "A deep dive into designing and deploying a production RAG system that processes over 100,000 document embeddings with multi-query retrieval and cross-encoder reranking.",
-    tags: ["RAG", "AI", "Architecture"],
-  },
-];
+import { getAllPosts } from "@/lib/blog";
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <div className="pt-24 pb-16 px-6">
       <div className="max-w-3xl mx-auto">
@@ -36,34 +20,70 @@ export default function BlogPage() {
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="group rounded-xl bg-surface border border-border p-6 hover:border-purple-500/30 transition-colors"
+              className={`group relative rounded-xl bg-surface border border-border overflow-hidden transition-colors ${
+                post.comingSoon ? "opacity-70" : "hover:border-purple-500/30"
+              }`}
             >
-              <div className="flex items-center gap-3 mb-3">
-                <time className="text-xs text-zinc-500">{post.date}</time>
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20"
+              {/* Cover image — fills the right ~65% of the card on desktop,
+                  with the image's left portion fading into the card background.
+                  Hidden on mobile for readability. */}
+              {post.coverImage && (
+                <div
+                  className="hidden sm:block absolute inset-y-0 right-0 w-[65%] pointer-events-none"
+                  aria-hidden
+                  style={{
+                    maskImage:
+                      "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.85) 55%, black 75%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.85) 55%, black 75%)",
+                  }}
+                >
+                  <Image
+                    src={post.coverImage}
+                    alt=""
+                    fill
+                    sizes="65vw"
+                    className="object-cover object-right"
+                  />
+                </div>
+              )}
+
+              {/* Text content — sits over the faded portion of the image on desktop.
+                  Width caps at ~55% so it doesn't spill past where the image becomes opaque. */}
+              <div className="relative p-6 sm:w-[55%] min-w-0">
+                <div className="flex items-center gap-3 mb-3 flex-wrap">
+                  <time className="text-xs text-zinc-500">{post.date}</time>
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h2
+                  className={`text-xl font-semibold text-zinc-100 transition-colors mb-2 ${
+                    !post.comingSoon ? "group-hover:text-purple-300" : ""
+                  }`}
+                >
+                  {post.title}
+                </h2>
+
+                <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                  {post.excerpt}
+                </p>
+
+                {!post.comingSoon && (
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center gap-1 text-sm text-purple-400 hover:gap-2 transition-all"
                   >
-                    {tag}
-                  </span>
-                ))}
+                    Read More <ArrowRight size={14} />
+                  </Link>
+                )}
               </div>
-
-              <h2 className="text-xl font-semibold text-zinc-100 group-hover:text-purple-300 transition-colors mb-2">
-                {post.title}
-              </h2>
-
-              <p className="text-sm text-zinc-500 leading-relaxed mb-4">
-                {post.excerpt}
-              </p>
-
-              <Link
-                href={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-1 text-sm text-purple-400 hover:gap-2 transition-all"
-              >
-                Read More <ArrowRight size={14} />
-              </Link>
             </article>
           ))}
         </div>

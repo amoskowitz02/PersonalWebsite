@@ -118,3 +118,216 @@ html {
 .bg-orb-3 {
   animation: floatOrb3 30s ease-in-out infinite;
 }
+
+/* Blog post markdown styling */
+.prose-blog {
+  color: #d4d4d8;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.prose-blog h1,
+.prose-blog h2,
+.prose-blog h3,
+.prose-blog h4 {
+  color: #fafafa;
+  font-weight: 700;
+  scroll-margin-top: 6rem;
+}
+
+.prose-blog h2 {
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.prose-blog h3 {
+  font-size: 1.375rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-blog h4 {
+  font-size: 1.125rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-blog strong {
+  color: var(--color-purple-300);
+  font-weight: 600;
+}
+
+.prose-blog em {
+  color: #e4e4e7;
+  font-style: italic;
+}
+
+.prose-blog a {
+  color: var(--color-purple-400);
+  text-decoration: underline;
+  text-decoration-color: rgba(192, 132, 252, 0.3);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.prose-blog a:hover {
+  color: var(--color-purple-300);
+  text-decoration-color: var(--color-purple-300);
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-blog ul {
+  list-style-type: disc;
+}
+
+.prose-blog ol {
+  list-style-type: decimal;
+}
+
+.prose-blog li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog li::marker {
+  color: var(--color-purple-500);
+}
+
+.prose-blog code {
+  background: var(--color-surface-light);
+  color: var(--color-purple-300);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: var(--font-mono);
+  border: 1px solid var(--color-border);
+}
+
+.prose-blog pre {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.prose-blog pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #e4e4e7;
+}
+
+.prose-blog blockquote {
+  border-left: 3px solid var(--color-purple-500);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #a1a1aa;
+  font-style: italic;
+}
+
+.prose-blog img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.prose-blog hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 3rem 0;
+}
+
+/* Tables */
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.prose-blog thead {
+  background: var(--color-surface-light);
+}
+
+.prose-blog th {
+  color: #fafafa;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.prose-blog td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: #d4d4d8;
+}
+
+.prose-blog tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-blog tbody tr:hover {
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.prose-blog table strong {
+  color: var(--color-purple-300);
+}
+
+/* Side-by-side image row — used via inline HTML <div class="image-row"> */
+.prose-blog .image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  align-items: center;
+}
+
+.prose-blog .image-row img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
+/* Hero video — autoplay muted loop at the top of blog posts */
+.prose-blog .blog-hero-video-wrapper {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  margin: 0 0 2rem 0;
+  background: #000;
+  line-height: 0;
+}
+
+.prose-blog .blog-hero-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
+}
+
+

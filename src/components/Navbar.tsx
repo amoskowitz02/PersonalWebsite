@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const navLinks = [
   { href: "/#about", label: "About" },
@@ -18,27 +19,27 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold text-purple-400">
+        <Link href="/" className="text-xl font-bold text-purple-400">
           AM
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/blog"
             className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
           >
             Blog
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -56,22 +57,22 @@ export default function Navbar() {
         <div className="md:hidden bg-surface border-b border-border">
           <div className="flex flex-col px-6 py-4 gap-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href="/blog"
               className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Blog
-            </a>
+            </Link>
           </div>
         </div>
       )}

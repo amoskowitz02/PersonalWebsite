@@ -2,6 +2,7 @@
 
 import { projects } from "@/data/projects";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Projects() {
@@ -25,18 +26,24 @@ export default function Projects() {
           {projects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects/${project.slug}`}
+              href={`/blog/${project.blogSlug}`}
               className="group flex-shrink-0 w-80 md:w-96 snap-start"
             >
               <div className="h-full flex flex-col rounded-2xl bg-surface border border-border overflow-hidden hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/5">
-                {/* Image placeholder */}
-                <div className="relative h-48 bg-surface-light flex items-center justify-center text-zinc-600 text-sm border-b border-border">
+                {/* Cover image */}
+                <div className="relative h-48 bg-surface-light border-b border-border overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 320px, 384px"
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                  />
                   {project.liveDemo && (
-                    <span className="absolute top-4 right-4 px-2 py-1 rounded text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                    <span className="absolute top-4 right-4 z-10 px-2 py-1 rounded text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-sm">
                       Live Demo
                     </span>
                   )}
-                  <span>Screenshot</span>
                 </div>
 
                 <div className="flex-1 flex flex-col p-6">
