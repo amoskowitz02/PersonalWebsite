@@ -20,7 +20,7 @@ export default function Contact() {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbwbWngcCwfglTUGziXdvm-E4IUI2MCK2waXblNvb_BGu-LZcst69oEWfbIId5uix0WA/exec",
+        "https://script.google.com/macros/s/AKfycbzKUiOf3EP9lSXY8V9TDCHnPnurIVferKxH8KMsZo8tLOQHZuF6GO5jpRRONttu8HbV/exec",
         {
           method: "POST",
           mode: "no-cors",
