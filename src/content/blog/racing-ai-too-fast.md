@@ -64,7 +64,7 @@ With the editor I designed 10 maps with various shapes and difficulty levels. Ea
 
 Before, I was only training one car at a time — it would go around the track until it crashed, then start again. Now I can train a whole grid of cars simultaneously, all on the same screen, each on a random map going a random direction. They all feed experience into the same model. It's not just faster — it forces the AI to actually learn how to drive instead of memorizing one track.
 
-![Multiple cars training simultaneously on different maps](/images/blog/racing-ai-too-fast/training-grid.png)
+![Multiple cars training simultaneously on different maps](/images/blog/racing-ai-too-fast/training-grid-v2.png)
 
 #### Speed
 
