@@ -25,7 +25,7 @@ export const projects: Project[] = [
     shortDescription:
       "A custom CNN tested against noise and rotation to find the limits of what a model can actually learn from isolated handwritten digits.",
     tags: ["Python", "Deep Learning", "CNN", "TensorFlow"],
-    image: "/images/projects/digit-classifier-cover.png",
+    image: "/images/projects/digit-classifier-cover-v2.png",
     blogSlug: "noise-rotation-cnn",
   },
   {

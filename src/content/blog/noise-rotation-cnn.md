@@ -5,7 +5,7 @@ date: "2026-04-10"
 excerpt: "A senior project in deep learning that started as a standard handwritten digit classifier — until I started throwing noise and rotation at it and learned that some problems are inherent to the data, not the model."
 tags: ["Deep Learning", "CNN", "Computer Vision"]
 github: "https://github.com/amoskowitz02/HandwrittenDigitClassification"
-coverImage: "/images/projects/digit-classifier-cover.png"
+coverImage: "/images/projects/digit-classifier-cover-v2.png"
 ---
 
 This was one of my senior projects for my deep learning course at Stevens. When we were told to come up with a final project, I knew I didn't want to do what everyone else was going to do. I started doing some research and came across the MNIST and USPS datasets for handwritten digits — and I thought this would be a perfect way to really showcase my understanding of how these models work at a fundamental level.
