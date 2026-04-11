@@ -20,7 +20,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl md:text-2xl text-zinc-400 font-light">
-          AI & Data Systems Engineer | Automation Specialist
+          AI & Data Systems Engineer | Consultant
         </p>
 
         <p className="text-lg text-zinc-500 max-w-xl leading-relaxed">

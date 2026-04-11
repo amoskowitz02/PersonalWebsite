@@ -61,7 +61,7 @@ export default function About() {
               <span className="text-purple-300 font-medium">Summa Cum Laude</span>{" "}
               graduate from Stevens Institute of Technology (CS,{" "}
               <span className="text-purple-300 font-medium">3.9 GPA</span>).
-              Always looking for interesting problems to solve.
+              Always looking for interesting problems to solve. Currently open to full-time and consulting opportunities.
             </p>
           </div>
         </div>
