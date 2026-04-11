@@ -107,7 +107,7 @@ A few other close-ups that would have broken the old version:
 
 ![Mars rover mosaic](/images/blog/ai-mosaic-generator/rover-mosaic.png)
 
-**A couple at a pumpkin patch:**
+**My girlfriend and I at a pumpkin patch:**
 
 ![Couple at pumpkin patch mosaic](/images/blog/ai-mosaic-generator/pumpkin-couple-mosaic.png)
 
@@ -115,7 +115,7 @@ All three hold up. The "doesn't work on close-ups" category is basically gone no
 
 ### What I Couldn't Fix: Faces
 
-The face problem is still there, and I'm pretty sure I can't fix it with this architecture. The pumpkin patch couple is actually a good example — the pose, skin tone, and general features line up correctly now (thanks to the image description), but the actual faces aren't recognizably them. Stability AI's diffusion model regenerates faces from scratch on every call. It has no concept of preserving a specific person's identity across styles.
+The face problem is still there, and I'm pretty sure I can't fix it with this architecture. The pumpkin patch photo is actually a good example — the pose, skin tone, and general features line up correctly now (thanks to the image description), but the actual faces aren't recognizably them. Stability AI's diffusion model regenerates faces from scratch on every call. It has no concept of preserving a specific person's identity across styles.
 
 So on faces: the result looks intentionally stylized (charcoal portrait, pop art, watercolor) rather than the "generic AI face filter" look it had before. It's an improvement, but it's not identity-preserving. If you want "that's clearly my friend, just rendered as a watercolor," you'd need face-locking tools like CodeFormer or IP-Adapter Face, which are a whole different class of problem outside what Stability's Control Structure API can do.
 
