@@ -1,6 +1,5 @@
 import { ArrowLeft } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -34,19 +33,6 @@ export default async function BlogPostPage({
           <ArrowLeft size={16} />
           Back to Blog
         </Link>
-
-        {post.coverImage && (
-          <div className="relative w-full aspect-[5/3] rounded-2xl overflow-hidden border border-border mb-10">
-            <Image
-              src={post.coverImage}
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
 
         <div className="flex items-center gap-3 mb-4 flex-wrap">
           <time className="text-xs text-zinc-500">{post.date}</time>
