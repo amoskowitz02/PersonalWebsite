@@ -16,7 +16,6 @@ export const projects: Project[] = [
       "A 2D racing game where a trained AI model learns to navigate any custom track layout — so fast that it's physically impossible to drive manually.",
     tags: ["Python", "Reinforcement Learning", "PPO", "Pygame"],
     image: "/images/projects/ai-racer-cover.png",
-    liveDemo: true,
     blogSlug: "racing-ai-too-fast",
   },
   {
