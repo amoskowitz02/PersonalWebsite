@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const siteTitle = "Adam Moskowitz | AI & Data Systems Engineer";
 const siteDescription =
   "Portfolio of Adam Moskowitz — AI & Data Systems Engineer building production AI pipelines, data warehouses, and automation systems.";
-const siteUrl = "https://adammoskowitz.dev";
+const siteUrl = "https://www.adammoskowitz.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
