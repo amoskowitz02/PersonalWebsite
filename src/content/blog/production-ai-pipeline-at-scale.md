@@ -4,6 +4,7 @@ title: "How I Built a Production AI Pipeline at Scale — Mistakes and All"
 date: "2026-04-10"
 excerpt: "The real story of building an AI content generation pipeline for 27,000 pages — from writer agents and validator chains to a RAG system that cut costs by 87% and drove a +17% lift in impressions."
 tags: ["RAG", "Multi-Agent", "Production AI"]
+coverImage: "/images/blog/production-ai-pipeline-at-scale/cover.jpg"
 ---
 
 The goal of this project was simple on paper: build a system where I could click a button and generate thousands of FAQ pages with no manual revisions afterwards. No human in the loop, no one going back to check the answers — just accurate, publish-ready content at scale.
