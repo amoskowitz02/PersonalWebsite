@@ -13,6 +13,8 @@ The client had about 27,000 product pages that drove conversions, and the plan w
 
 It did not go as planned. But by the end of it, I'd built a pipeline with enough validation, checks, and flagging that I was confident I could do exactly that — click a button and generate thousands of FAQs with no manual revisions needed. What I ended up building was way more robust than what was originally scoped.
 
+![Documents flowing through an AI pipeline](/images/blog/production-ai-pipeline-at-scale/cover.jpg)
+
 ### Gathering the Data
 
 The first step was pulling together everything I could about each page. I scraped the site itself and pulled data from SERP features — People Also Ask questions, top keywords, related keywords for each page. I also collected the product manuals and installation guides associated with each page — these would be the source of truth for generating accurate answers later on.
