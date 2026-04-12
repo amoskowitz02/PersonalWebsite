@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle = "Adam Moskowitz | AI & Data Systems Engineer";
+const siteTitle = "Adam Moskowitz | AI & Data Systems Engineer | Consultant";
 const siteDescription =
   "Portfolio of Adam Moskowitz — AI & Data Systems Engineer building production AI pipelines, data warehouses, and automation systems.";
 const siteUrl = "https://www.adammoskowitz.dev";
