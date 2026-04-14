@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
     description:
       "Leading the design and development of AI and data systems for an 11-person digital agency.",
     bullets: [
-      "Built and own the company's internal automation and AI codebase from the ground up — 75,000+ lines of production Python",
+      "Built and manage the company's AI, automation, and operational codebase from the ground up — 100,000+ lines of production Python",
       "Designed and implemented a BigQuery data warehouse from scratch — 50+ tables with full data governance and 5+ automated ETL pipelines",
       "Architected a large-scale AI-powered FAQ generation system with 100,000+ document embeddings using a custom RAG pipeline with multi-query retrieval and reranking",
       "Scaled AI systems to generate thousands of FAQ pages per day with multi-stage validation maintaining A-grade response quality",

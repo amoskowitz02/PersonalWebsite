@@ -29,7 +29,7 @@ export default function About() {
               I&apos;m an AI and data systems engineer who builds production
               infrastructure from the ground up. At Skyward, I&apos;ve authored{" "}
               <span className="text-purple-300 font-medium">
-                75,000+ lines of production Python
+                100,000+ lines of production Python
               </span>{" "}
               powering AI pipelines, data warehouses, and automation systems that
               deliver measurable results — including a{" "}
