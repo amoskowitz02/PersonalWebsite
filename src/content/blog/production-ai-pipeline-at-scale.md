@@ -1,6 +1,6 @@
 ---
 slug: production-ai-pipeline-at-scale
-title: "How I Built a Production AI Pipeline at Scale — Mistakes and All"
+title: "How I Built a Production RAG Pipeline at Scale — Mistakes and All"
 date: "2026-04-10"
 excerpt: "The real story of building an AI content generation pipeline for 27,000 pages — from writer agents and validator chains to a RAG system that cut costs by 87% and drove a +17% lift in impressions."
 tags: ["RAG", "Multi-Agent", "Production AI"]
