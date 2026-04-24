@@ -26,25 +26,33 @@ export default function About() {
           {/* Bio */}
           <div className="md:col-span-2 space-y-4 text-zinc-400 leading-relaxed">
             <p>
-              I&apos;m an AI and data systems engineer who builds production
-              infrastructure from the ground up. At Skyward, I&apos;ve authored{" "}
+              I&apos;m an AI and data systems engineer who builds{" "}
               <span className="text-purple-300 font-medium">
-                100,000+ lines of production Python
+                end-to-end AI infrastructure
               </span>{" "}
-              powering AI pipelines, data warehouses, and automation systems that
-              deliver measurable results — including a{" "}
+              from the ground up. At Skyward, I architected a{" "}
+              <span className="text-purple-300 font-medium">RAG pipeline</span>{" "}
+              that{" "}
               <span className="text-purple-300 font-medium">
-                RAG system
+                reduced LLM input cost by 97%
               </span>{" "}
-              that generated{" "}
+              while scaling to{" "}
               <span className="text-purple-300 font-medium">
-                27,000+ FAQ pages
+                27,000+ generated pages
               </span>{" "}
-              and drove{" "}
+              (
               <span className="text-purple-300 font-medium">
-                +24% clicks
+                +17% impressions
+              </span>
+              ,{" "}
+              <span className="text-purple-300 font-medium">
+                +10% clicks
+              </span>
+              ,{" "}
+              <span className="text-purple-300 font-medium">
+                +18% average rank
               </span>{" "}
-              for a major client.
+              for a major client).
             </p>
             <p>
               My sweet spot is the intersection of{" "}
@@ -52,10 +60,16 @@ export default function About() {
               <span className="text-purple-300 font-medium">data engineering</span>, and{" "}
               <span className="text-purple-300 font-medium">applied AI</span>. I design{" "}
               <span className="text-purple-300 font-medium">BigQuery data warehouses</span>,
-              build filtered RAG pipelines, develop{" "}
-              <span className="text-purple-300 font-medium">multi-agent workflows</span>,
-              and create internal tools that make complex systems accessible to
-              non-technical teams.
+              build{" "}
+              <span className="text-purple-300 font-medium">RAG pipelines</span>{" "}
+              with{" "}
+              <span className="text-purple-300 font-medium">
+                multi-query retrieval and reranking
+              </span>, develop{" "}
+              <span className="text-purple-300 font-medium">
+                multi-agent orchestration frameworks
+              </span>, and create internal tools that make complex systems
+              accessible to non-technical teams.
             </p>
             <p>
               <span className="text-purple-300 font-medium">Summa Cum Laude</span>{" "}
@@ -69,9 +83,9 @@ export default function About() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
           {[
-            { value: "75K+", label: "Lines of Production Code" },
+            { value: "100K+", label: "Lines of Production Code" },
             { value: "100K+", label: "Document Embeddings" },
-            { value: "50+", label: "Data Warehouse Tables" },
+            { value: "100+", label: "Data Warehouse Tables" },
             { value: "1,000+", label: "Servers Deployed" },
           ].map((stat) => (
             <div

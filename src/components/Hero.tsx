@@ -24,8 +24,8 @@ export default function Hero() {
         </p>
 
         <p className="text-lg text-zinc-500 max-w-xl leading-relaxed">
-          Building production AI pipelines, data warehouses, and automation
-          systems from the ground up.
+          Building end-to-end AI infrastructure, RAG, vector databases, and
+          multi-agent orchestration.
         </p>
 
         {/* Social links */}
