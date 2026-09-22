@@ -4,16 +4,13 @@ import { projects } from "@/data/projects";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          Featured{" "}
-          <span className="text-purple-400">Projects</span>
-        </h2>
-        <div className="h-1 w-16 bg-purple-500 rounded mx-auto mb-12" />
+        <SectionHeader eyebrow="WHAT I'VE BUILT" title="Featured" accent="Projects" />
 
         {/* Horizontal scrolling cards */}
         <div

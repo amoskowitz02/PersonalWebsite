@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { skillCategories } from "@/data/skills";
+import SectionHeader from "@/components/SectionHeader";
 
 const NUM_COPIES = 6;
 const SPEED = 80; // px/s
@@ -71,11 +72,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          Tech{" "}
-          <span className="text-purple-400">Stack</span>
-        </h2>
-        <div className="h-1 w-16 bg-purple-500 rounded mx-auto mb-12" />
+        <SectionHeader eyebrow="WHAT I WORK WITH" title="Tech" accent="Stack" />
 
         <div className="space-y-8">
           {skillCategories.map((category, idx) => (

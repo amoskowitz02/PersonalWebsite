@@ -160,7 +160,7 @@ html {
 }
 
 .prose-blog strong {
-  color: var(--color-purple-300);
+  color: #fafafa;
   font-weight: 600;
 }
 
@@ -292,7 +292,7 @@ html {
 }
 
 .prose-blog table strong {
-  color: var(--color-purple-300);
+  color: #fafafa;
 }
 
 /* Side-by-side image row — used via inline HTML <div class="image-row"> */

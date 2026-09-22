@@ -1,81 +1,105 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { experiences } from "@/data/experience";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Experience() {
+  // Skyward (index 0) is expanded by default; everything else starts collapsed.
+  const [openIdx, setOpenIdx] = useState<Set<number>>(new Set([0]));
+
+  const toggle = (idx: number) =>
+    setOpenIdx((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+
   return (
     <section id="experience" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          Work{" "}
-          <span className="text-purple-400">Experience</span>
-        </h2>
-        <div className="h-1 w-16 bg-purple-500 rounded mx-auto mb-12" />
+      <div className="max-w-3xl mx-auto">
+        <SectionHeader eyebrow="WHERE I'VE BEEN" title="Work" accent="Experience" />
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-          <div className="space-y-12">
-            {experiences.map((exp, idx) => (
+        <div className="space-y-4">
+          {experiences.map((exp, idx) => {
+            const isOpen = openIdx.has(idx);
+            return (
               <div
                 key={`${exp.company}-${exp.role}`}
-                className={`relative flex flex-col md:flex-row gap-6 ${
-                  idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className="rounded-xl bg-surface border border-border overflow-hidden transition-colors hover:border-purple-500/30"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-purple-500 border-2 border-background -translate-x-1.5 mt-2 z-10" />
-
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
-
-                {/* Card */}
-                <div className="ml-10 md:ml-0 md:w-1/2 rounded-xl bg-surface border border-border p-6 hover:border-purple-500/30 transition-colors">
-                  <div className="flex items-start justify-between mb-1">
-                    <h3 className="text-lg font-semibold text-zinc-100">
-                      {exp.role}
-                    </h3>
-                  </div>
-
-                  <p className="text-purple-400 font-medium text-sm">
-                    {exp.company}
-                  </p>
-                  <p className="text-xs text-zinc-500 mt-1">
-                    {exp.period} &middot; {exp.location}
-                  </p>
-
-                  <p className="text-sm text-zinc-400 mt-3">
-                    {exp.description}
-                  </p>
-
-                  <ul className="mt-3 space-y-2">
-                    {exp.bullets.map((bullet, i) => (
-                      <li
-                        key={i}
-                        className="text-sm text-zinc-500 flex items-start gap-2"
-                      >
-                        <span className="text-purple-500 mt-1.5 flex-shrink-0">
-                          &bull;
-                        </span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {exp.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-0.5 rounded bg-surface-light text-zinc-500 border border-border"
-                      >
-                        {tag}
+                <button
+                  type="button"
+                  onClick={() => toggle(idx)}
+                  aria-expanded={isOpen}
+                  className="w-full text-left p-6 flex items-start gap-4 cursor-pointer"
+                >
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <h3 className="text-lg font-semibold text-zinc-100">
+                        {exp.role}
+                      </h3>
+                      <span className="text-purple-400 font-medium text-sm">
+                        {exp.company}
                       </span>
-                    ))}
+                    </div>
+                    <p className="text-xs text-zinc-500 mt-1">
+                      {exp.period} &middot; {exp.location}
+                    </p>
+                    <p className="text-sm text-zinc-400 mt-3">
+                      {exp.description}
+                    </p>
+                  </div>
+                  <ChevronDown
+                    size={20}
+                    className={`text-zinc-500 flex-shrink-0 mt-1 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Expandable detail */}
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 -mt-1">
+                      <ul className="space-y-2 border-t border-border pt-4">
+                        {exp.bullets.map((bullet, i) => (
+                          <li
+                            key={i}
+                            className="text-sm text-zinc-400 flex items-start gap-2"
+                          >
+                            <span className="text-purple-500 mt-1.5 flex-shrink-0">
+                              &bull;
+                            </span>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {exp.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2 py-0.5 rounded bg-surface-light text-zinc-500 border border-border"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

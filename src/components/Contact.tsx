@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, FileText, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,11 +41,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          Let&apos;s{" "}
-          <span className="text-purple-400">Connect</span>
-        </h2>
-        <div className="h-1 w-16 bg-purple-500 rounded mx-auto mb-12" />
+        <SectionHeader eyebrow="LET'S TALK" title="Let's" accent="Connect" />
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Left — info */}

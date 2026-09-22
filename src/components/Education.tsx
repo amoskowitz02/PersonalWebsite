@@ -1,14 +1,40 @@
 import { GraduationCap, Award, BookOpen } from "lucide-react";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Education() {
   return (
     <section id="education" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          My{" "}
-          <span className="text-purple-400">Education</span>
-        </h2>
-        <div className="h-1 w-16 bg-purple-500 rounded mx-auto mb-12" />
+        <SectionHeader eyebrow="FOUNDATIONS" title="My" accent="Education" />
+
+        {/* Stevens — Master's (upcoming) */}
+        <div className="rounded-2xl bg-surface border border-purple-500/30 p-8 mb-8">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20">
+              <GraduationCap className="text-purple-400" size={28} />
+            </div>
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-xl font-semibold text-zinc-100">
+                  Stevens Institute of Technology
+                </h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                  Starting Fall 2026
+                </span>
+              </div>
+              <p className="text-purple-400 text-sm font-medium">
+                Master of Science in Applied Artificial Intelligence
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">Hoboken, NJ</p>
+              <p className="text-sm text-zinc-400 mt-3">
+                Returning to Stevens to add theoretical depth to the production
+                intuition I&apos;ve built in the field — with a focus on
+                knowledge graphs and Graph RAG, where the relationships between
+                entities become part of what the model reasons over.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Stevens */}
         <div className="rounded-2xl bg-surface border border-border p-8 mb-8">
