@@ -27,8 +27,10 @@ src/
     About.tsx             # Bio, profile photo, stats
     Skills.tsx            # JS-driven infinite scroll marquee (requestAnimationFrame)
     Projects.tsx          # Horizontal scrolling project cards
-    Experience.tsx        # Alternating timeline layout
+    Experience.tsx        # Concise work cards with expandable details
     Education.tsx         # Stevens + certifications
+    Currently.tsx         # Present work, next steps, and role interests
+    SectionHeader.tsx     # Shared narrative section heading
     Contact.tsx           # Inline form → Google Sheets
     Navbar.tsx            # Fixed nav, uses /#section links for cross-page navigation
     Footer.tsx            # Social links
@@ -45,9 +47,10 @@ public/
 ## Design System
 
 - Dark theme: background `#0a0a0f`, surface `#111118`, border `#2a2a3a`
-- Accent: purple scale (purple-300 for text highlights, purple-500/600 for buttons)
-- All bold/highlighted text uses `text-purple-300 font-medium`
-- Section headers: two words, white + purple (e.g., "About **Me**", "Tech **Stack**")
+- Accent: purple scale (purple-400/500/600 for interactive elements, labels, and buttons)
+- Use neutral text (`text-zinc-100`) for inline emphasis so body copy does not look clickable
+- Section headers use `SectionHeader`: narrative eyebrow + two-word white/purple title
+- Main page follows a narrative sequence: who I am, what I work with, where I've been, what I've built, foundations, where I'm headed, and contact
 - CTA buttons: full-width `max-w-md`, purple-600 bg, `animate-subtle-pulse` class
 
 ## Key Patterns

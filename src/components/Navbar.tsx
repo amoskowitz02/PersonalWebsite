@@ -7,9 +7,10 @@ import Link from "next/link";
 const navLinks = [
   { href: "/#about", label: "About" },
   { href: "/#skills", label: "Skills" },
-  { href: "/#projects", label: "Projects" },
   { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
   { href: "/#education", label: "Education" },
+  { href: "/#currently", label: "Currently" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -24,7 +25,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -36,7 +37,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/blog"
-            className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
+            className="text-sm text-purple-300 hover:text-purple-200 font-medium pl-6 ml-2 border-l border-border transition-colors"
           >
             Blog
           </Link>
@@ -68,7 +69,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/blog"
-              className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
+              className="text-sm text-purple-300 hover:text-purple-200 font-medium pt-4 border-t border-border transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Blog

@@ -26,13 +26,22 @@ export default async function BlogPostPage({
   return (
     <div className="pt-24 pb-16 px-6">
       <article className="max-w-3xl mx-auto">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-purple-400 transition-colors mb-8"
-        >
-          <ArrowLeft size={16} />
-          Back to Blog
-        </Link>
+        <div className="flex items-center gap-4 mb-8">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-purple-400 transition-colors"
+          >
+            <ArrowLeft size={16} />
+            Back to Blog
+          </Link>
+          <span className="text-zinc-700">&middot;</span>
+          <Link
+            href="/"
+            className="text-sm text-zinc-500 hover:text-purple-400 transition-colors"
+          >
+            Home
+          </Link>
+        </div>
 
         <div className="flex items-center gap-3 mb-4 flex-wrap">
           <time className="text-xs text-zinc-500">{post.date}</time>

@@ -1,14 +1,11 @@
 import Image from "next/image";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-10 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center">
-          About{" "}
-          <span className="text-purple-400">Me</span>
-        </h2>
-        <div className="h-1 w-16 bg-purple-500 rounded mx-auto mb-10" />
+        <SectionHeader eyebrow="WHO I AM" title="About" accent="Me" />
 
         <div className="grid md:grid-cols-3 gap-10">
           {/* Profile photo */}
@@ -24,58 +21,78 @@ export default function About() {
           </div>
 
           {/* Bio */}
-          <div className="md:col-span-2 space-y-4 text-zinc-400 leading-relaxed">
+          <div className="md:col-span-2 space-y-4 text-zinc-300 leading-relaxed">
             <p>
-              I&apos;m an AI and data systems engineer who builds{" "}
-              <span className="text-purple-300 font-medium">
+              I came up as someone who loved to code — for a long time I
+              thought writing every line was the whole job. AI changed how I
+              see that. When powerful models are available to anyone, the edge
+              isn&apos;t whether you can write the code, it&apos;s whether you
+              can{" "}
+              <span className="text-zinc-100 font-medium">
+                architect the right system reliably and safely
+              </span>
+              . Somewhere in my first year out of school, I shifted from{" "}
+              <span className="text-zinc-100 font-medium">
+                coder to systems architect
+              </span>
+              .
+            </p>
+            <p>
+              These days I build{" "}
+              <span className="text-zinc-100 font-medium">
                 end-to-end AI infrastructure
               </span>{" "}
               from the ground up. At Skyward, I architected a{" "}
-              <span className="text-purple-300 font-medium">RAG pipeline</span>{" "}
+              <span className="text-zinc-100 font-medium">RAG pipeline</span>{" "}
               that{" "}
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 reduced LLM input cost by 97%
               </span>{" "}
               while scaling to{" "}
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 27,000+ generated pages
               </span>{" "}
               (
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 +17% impressions
               </span>
               ,{" "}
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 +10% clicks
               </span>
               ,{" "}
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 +18% average rank
               </span>{" "}
               for a major client).
             </p>
             <p>
               My sweet spot is the intersection of{" "}
-              <span className="text-purple-300 font-medium">systems architecture</span>,{" "}
-              <span className="text-purple-300 font-medium">data engineering</span>, and{" "}
-              <span className="text-purple-300 font-medium">applied AI</span>. I design{" "}
-              <span className="text-purple-300 font-medium">BigQuery data warehouses</span>,
+              <span className="text-zinc-100 font-medium">systems architecture</span>,{" "}
+              <span className="text-zinc-100 font-medium">data engineering</span>, and{" "}
+              <span className="text-zinc-100 font-medium">applied AI</span>. I design{" "}
+              <span className="text-zinc-100 font-medium">BigQuery data warehouses</span>,
               build{" "}
-              <span className="text-purple-300 font-medium">RAG pipelines</span>{" "}
+              <span className="text-zinc-100 font-medium">RAG pipelines</span>{" "}
               with{" "}
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 multi-query retrieval and reranking
               </span>, develop{" "}
-              <span className="text-purple-300 font-medium">
+              <span className="text-zinc-100 font-medium">
                 multi-agent orchestration frameworks
               </span>, and create internal tools that make complex systems
               accessible to non-technical teams.
             </p>
             <p>
-              <span className="text-purple-300 font-medium">Summa Cum Laude</span>{" "}
+              <span className="text-zinc-100 font-medium">Summa Cum Laude</span>{" "}
               graduate from Stevens Institute of Technology (CS,{" "}
-              <span className="text-purple-300 font-medium">3.9 GPA</span>).
-              Always looking for interesting problems to solve. Currently open to full-time and consulting opportunities.
+              <span className="text-zinc-100 font-medium">3.9 GPA</span>), and
+              I&apos;m currently pursuing an{" "}
+              <span className="text-zinc-100 font-medium">
+                MS in Applied AI
+              </span>{" "}
+              at Stevens. Always looking for interesting problems to solve —
+              currently open to full-time and consulting opportunities.
             </p>
           </div>
         </div>
@@ -83,7 +100,7 @@ export default function About() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
           {[
-            { value: "100K+", label: "Lines of Production Code" },
+            { value: "100K+", label: "Lines of Code" },
             { value: "100K+", label: "Document Embeddings" },
             { value: "100+", label: "Data Warehouse Tables" },
             { value: "1,000+", label: "Servers Deployed" },
