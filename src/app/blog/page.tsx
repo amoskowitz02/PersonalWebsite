@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
@@ -9,6 +9,14 @@ export default function BlogPage() {
   return (
     <div className="pt-24 pb-16 px-6">
       <div className="max-w-3xl mx-auto">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-purple-400 transition-colors mb-8"
+        >
+          <ArrowLeft size={16} />
+          Back to Home
+        </Link>
+
         <h1 className="text-4xl font-bold mb-2">
           <span className="text-purple-400">Blog</span>
         </h1>

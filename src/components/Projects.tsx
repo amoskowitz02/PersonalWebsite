@@ -8,7 +8,7 @@ import SectionHeader from "@/components/SectionHeader";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHeader eyebrow="WHAT I'VE BUILT" title="Featured" accent="Projects" />
 
@@ -71,6 +71,15 @@ export default function Projects() {
             </Link>
           ))}
         </div>
+
+        <p className="text-center mt-8">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1 text-sm text-purple-400 hover:text-purple-300 transition-colors font-medium"
+          >
+            View All Posts <ArrowRight size={14} />
+          </Link>
+        </p>
       </div>
     </section>
   );

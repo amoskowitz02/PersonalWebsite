@@ -3,7 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-10 px-6">
       <div className="max-w-4xl mx-auto">
         <SectionHeader eyebrow="WHO I AM" title="About" accent="Me" />
 
@@ -87,12 +87,12 @@ export default function About() {
               <span className="text-zinc-100 font-medium">Summa Cum Laude</span>{" "}
               graduate from Stevens Institute of Technology (CS,{" "}
               <span className="text-zinc-100 font-medium">3.9 GPA</span>), and
-              this fall I head back for an{" "}
+              I&apos;m currently pursuing an{" "}
               <span className="text-zinc-100 font-medium">
                 MS in Applied AI
-              </span>
-              . Always looking for interesting problems to solve — currently
-              open to full-time and consulting opportunities.
+              </span>{" "}
+              at Stevens. Always looking for interesting problems to solve —
+              currently open to full-time and consulting opportunities.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function About() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
           {[
-            { value: "100K+", label: "Lines of Production Code" },
+            { value: "100K+", label: "Lines of Code" },
             { value: "100K+", label: "Document Embeddings" },
             { value: "100+", label: "Data Warehouse Tables" },
             { value: "1,000+", label: "Servers Deployed" },

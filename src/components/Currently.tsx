@@ -10,7 +10,7 @@ const items = [
   {
     icon: GraduationCap,
     label: "Learning",
-    body: "This fall I head back to Stevens for an MS in Applied AI — adding theoretical depth to the production intuition I've built, and going deeper on knowledge graphs and Graph RAG.",
+    body: "I'm currently pursuing an MS in Applied AI at Stevens, expected 2028 — adding theoretical depth to the production intuition I've built, with a focus on knowledge graphs, Graph RAG, and agentic pipelines.",
   },
   {
     icon: Compass,
@@ -21,7 +21,7 @@ const items = [
 
 export default function Currently() {
   return (
-    <section id="currently" className="py-24 px-6">
+    <section id="currently" className="py-12 px-6">
       <div className="max-w-4xl mx-auto">
         <SectionHeader eyebrow="WHERE I'M HEADED" title="Right" accent="Now" />
 

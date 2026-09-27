@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center px-6 pt-32 pb-24">
+    <section className="relative flex flex-col items-center justify-center px-6 pt-32 pb-12">
       {/* Gradient background — fades smoothly into page */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-purple-900/5 to-transparent" />
 

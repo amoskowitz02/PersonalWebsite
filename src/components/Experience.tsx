@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Briefcase, ChevronDown } from "lucide-react";
 import { experiences } from "@/data/experience";
 import SectionHeader from "@/components/SectionHeader";
 
@@ -18,8 +18,8 @@ export default function Experience() {
     });
 
   return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="experience" className="py-12 px-6">
+      <div className="max-w-4xl mx-auto">
         <SectionHeader eyebrow="WHERE I'VE BEEN" title="Work" accent="Experience" />
 
         <div className="space-y-4">
@@ -28,36 +28,41 @@ export default function Experience() {
             return (
               <div
                 key={`${exp.company}-${exp.role}`}
-                className="rounded-xl bg-surface border border-border overflow-hidden transition-colors hover:border-purple-500/30"
+                className="rounded-2xl bg-surface border border-border overflow-hidden transition-colors hover:border-purple-500/30"
               >
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
                   aria-expanded={isOpen}
-                  className="w-full text-left p-6 flex items-start gap-4 cursor-pointer"
+                  className={`relative w-full text-left p-8 cursor-pointer ${
+                    isOpen ? "pb-4" : ""
+                  }`}
                 >
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                      <h3 className="text-lg font-semibold text-zinc-100">
-                        {exp.role}
-                      </h3>
-                      <span className="text-purple-400 font-medium text-sm">
-                        {exp.company}
-                      </span>
+                  <ChevronDown
+                    size={20}
+                    className={`absolute top-8 right-8 text-zinc-500 flex-shrink-0 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                  <div className="flex items-center gap-4 pr-10 mb-4">
+                    <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 flex-shrink-0">
+                      <Briefcase className="text-purple-400" size={28} />
                     </div>
-                    <p className="text-xs text-zinc-500 mt-1">
+                    <h3 className="text-xl font-semibold text-zinc-100">
+                      {exp.role}
+                    </h3>
+                  </div>
+                  <div>
+                    <span className="text-purple-400 font-medium text-sm">
+                      {exp.company}
+                    </span>
+                    <p className="text-sm text-zinc-500 mt-1">
                       {exp.period} &middot; {exp.location}
                     </p>
                     <p className="text-sm text-zinc-400 mt-3">
                       {exp.description}
                     </p>
                   </div>
-                  <ChevronDown
-                    size={20}
-                    className={`text-zinc-500 flex-shrink-0 mt-1 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
                 </button>
 
                 {/* Expandable detail */}
@@ -69,8 +74,8 @@ export default function Experience() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-6 -mt-1">
-                      <ul className="space-y-2 border-t border-border pt-4">
+                    <div className="px-8 pb-8 -mt-1">
+                      <ul className="space-y-2 border-t border-border pt-3">
                         {exp.bullets.map((bullet, i) => (
                           <li
                             key={i}

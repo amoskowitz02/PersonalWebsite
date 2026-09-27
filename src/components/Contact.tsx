@@ -39,7 +39,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-12 px-6">
       <div className="max-w-4xl mx-auto">
         <SectionHeader eyebrow="LET'S TALK" title="Let's" accent="Connect" />
 

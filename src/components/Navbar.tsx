@@ -37,7 +37,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/blog"
-            className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
+            className="text-sm text-purple-300 hover:text-purple-200 font-medium pl-6 ml-2 border-l border-border transition-colors"
           >
             Blog
           </Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/blog"
-              className="text-sm text-zinc-400 hover:text-purple-400 transition-colors"
+              className="text-sm text-purple-300 hover:text-purple-200 font-medium pt-4 border-t border-border transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Blog
